@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "name": "PlayerJoin",
+    "maps": [
+        {
+            "name": "Join",
+            "id": "a87daf73-487f-4050-a241-00f5e760ca32",
+            "actions": [
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "119840c5-6633-4214-baef-c82f45f7e1da",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a852576e-774a-4a0a-89de-eb1437086c82",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24d68e45-a9e1-40d4-b587-2cb044aee840",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
