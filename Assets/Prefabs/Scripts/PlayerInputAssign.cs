@@ -12,8 +12,8 @@ public class PlayerInputAssign : MonoBehaviour
 
     private InputAction joinAction;
 
-    private bool p1Assigned = false;
-    private bool p2Assigned = false; // variables to tell whether or not the player objects have an input device assigned to them
+    public bool p1Assigned = false;
+    public bool p2Assigned = false; // variables to tell whether or not the player objects have an input device assigned to them
     private readonly List<InputDevice> assignedDevices = new List<InputDevice>(); // keeps track of which devices are already paired/used
 
     // Called whenever the Join input action is performed (e.g., pressing Start)
