@@ -8,7 +8,6 @@ public class UIEnabler : MonoBehaviour
     public GameObject PressToPairUI;
     public GameObject P1ConnectedUI;
     public GameObject P2ConnectedUI;
-    public GameObject PressToBeginUI;
     public PlayerInputAssign inputAssign;
 
     void Start()
@@ -26,8 +25,8 @@ public class UIEnabler : MonoBehaviour
 
             if (inputAssign.p2Assigned)
             {
+                P1ConnectedUI.SetActive(false);
                 P2ConnectedUI.SetActive(true);
-                PressToBeginUI.SetActive(true);
             }
         }
 
@@ -51,7 +50,6 @@ private void ResumeGame() {
         {
             P1ConnectedUI.SetActive(false);
             P2ConnectedUI.SetActive(false);
-            PressToBeginUI.SetActive(false);
             Time.timeScale = 1;
 
             this.enabled = false;
