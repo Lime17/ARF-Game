@@ -26,6 +26,16 @@ public class PlayerHPRestart : MonoBehaviour
             // Start delayed reload to avoid issues with physics or animation finishing
             Invoke(nameof(ReloadScene), reloadDelay);
         }
+        else if (gm.player2HP <= 0f)
+        {
+            isReloading = true; // lock out repeated reloads
+
+            // Reset HP before reload to avoid weird carryover (optional)
+            gm.playerHP = gm.maxHP;
+
+            // Start delayed reload to avoid issues with physics or animation finishing
+            Invoke(nameof(ReloadScene), reloadDelay);
+        }
     }
 
     private void ReloadScene()

@@ -3,12 +3,14 @@ using UnityEngine.UI;
 
 public class hpCounterUI : MonoBehaviour
 {
-    private Image hpBar;
+    public Image hpBar;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Image P2hpBar;
+
     void Start()
     {
         hpBar = GetComponent<Image>(); 
+        P2hpBar = GetComponent<Image>(); 
     }
 
     // Update is called once per frame
@@ -17,5 +19,9 @@ public class hpCounterUI : MonoBehaviour
         if (GameManager.Instance == null || hpBar == null) return;
         float currentHP = GameManager.Instance.playerHP / GameManager.Instance.maxHP;
         hpBar.fillAmount = Mathf.Clamp01(currentHP);
+        
+        if (GameManager.Instance == null || P2hpBar == null) return;
+        float P2currentHP = GameManager.Instance.player2HP / GameManager.Instance.player2maxHP;
+        P2hpBar.fillAmount = Mathf.Clamp01(P2currentHP);
     }
 }
