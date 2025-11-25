@@ -7,12 +7,6 @@ public class hpCounterUI : MonoBehaviour
 
     public Image P2hpBar;
 
-    void Start()
-    {
-        hpBar = GetComponent<Image>(); 
-        P2hpBar = GetComponent<Image>(); 
-    }
-
     // Update is called once per frame
     void Update()
     {

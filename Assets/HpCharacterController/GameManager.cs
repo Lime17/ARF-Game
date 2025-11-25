@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public float player2maxHP = 100f;
     public float playerHP;
     public float player2HP;
-    public Player1Identify playerID;
+    //public Player1Identify playerID;
 
   private void Awake()
 {
@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
     }
 
     //remove health from anywhere in the scene
-    public void RemoveHP(float hpToRemove)
+    public void RemoveHP(float hpToRemove, int playerID)
     {
         if (hpToRemove == 0) return;
-        if(playerID.playerNumber == 1){ 
+        if(playerID == 1){ 
        playerHP -= hpToRemove;
-        } else if (playerID.playerNumber == 2)
+        } else if (playerID == 2)
         {
             player2HP -= hpToRemove;
         }

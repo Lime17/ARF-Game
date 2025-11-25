@@ -4,6 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class PlayerHPCollider : MonoBehaviour
 {
+
+[Header("Player ID")]
+public int thisPlayaerID;
+
     [Header("Damage / Cooldown")]
     public float hitCooldown = 1f;
     private float lastHitTime = -999f;
@@ -71,7 +75,7 @@ public class PlayerHPCollider : MonoBehaviour
         // Apply delta (damage or heal) - assuming hpChange is signed (- = damage, + = heal)
         if (hpMod.hpChange < 0)
         {
-            GameManager.Instance?.RemoveHP(-hpMod.hpChange);
+            GameManager.Instance?.RemoveHP(-hpMod.hpChange, thisPlayaerID);
             if (HpLoseSound) audioS.PlayOneShot(HpLoseSound);
         }
         else

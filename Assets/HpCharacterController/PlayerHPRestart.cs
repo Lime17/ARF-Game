@@ -31,7 +31,7 @@ public class PlayerHPRestart : MonoBehaviour
             isReloading = true; // lock out repeated reloads
 
             // Reset HP before reload to avoid weird carryover (optional)
-            gm.playerHP = gm.maxHP;
+            gm.playerHP = gm.player2maxHP;
 
             // Start delayed reload to avoid issues with physics or animation finishing
             Invoke(nameof(ReloadScene), reloadDelay);

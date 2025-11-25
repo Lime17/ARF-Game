@@ -1,31 +1,34 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class UIEnabler : MonoBehaviour
 {
     private float fixedDeltaTime;
 
-    public GameObject PressToPairUI;
+    public GameObject BackgroundUI;
+
+    public GameObject PressStartUI;
     public GameObject P1ConnectedUI;
     public GameObject P2ConnectedUI;
+    public GameObject PressSelectUI;
     public PlayerInputAssign inputAssign;
-
     void Start()
     {
-        PressToPairUI.SetActive(true);
+        BackgroundUI.SetActive(true);
+        PressStartUI.SetActive(true);
+        StartCoroutine(PressSelectCoroutine());
     }
 
     void Update()
     {
         if (inputAssign.p1Assigned)
         {
-            PressToPairUI.SetActive(false);
             P1ConnectedUI.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0; // pause the game
 
             if (inputAssign.p2Assigned)
-            {
-                P1ConnectedUI.SetActive(false);
+            {   
                 P2ConnectedUI.SetActive(true);
             }
         }
@@ -46,11 +49,27 @@ public class UIEnabler : MonoBehaviour
         }
     }
 
+    IEnumerator PressSelectCoroutine () {
+	while(true){ // This creates a never-ending loop
+		if (inputAssign.p2Assigned){
+            Debug.Log ("InputAssign");
+            yield return new WaitForSecondsRealtime (2.0f);
+            PressSelectUI.SetActive (true);
+        }
+      break;
+	}
+    }
+
+
 private void ResumeGame() {
         {
+            BackgroundUI.SetActive(false);
+            PressStartUI.SetActive(false);
             P1ConnectedUI.SetActive(false);
             P2ConnectedUI.SetActive(false);
-            Time.timeScale = 1;
+            PressSelectUI.SetActive(false);
+            Time.timeScale = 1; //unpause the game
+            
 
             this.enabled = false;
         }

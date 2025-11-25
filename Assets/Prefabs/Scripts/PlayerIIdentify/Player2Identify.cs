@@ -6,7 +6,7 @@ public class Player2Identify : MonoBehaviour
     {
         if (hit.collider.CompareTag("Attack"))
         {
-            playerID.playerNumber = 1;
+            playerID.playerNumber = 2;
         }
 }
 }
