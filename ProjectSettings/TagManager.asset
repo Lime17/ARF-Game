@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Attack
+  - hurtP2
+  - hurtP1
   layers:
   - Default
   - TransparentFX

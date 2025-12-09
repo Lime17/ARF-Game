@@ -6,7 +6,8 @@ public class PlayerHPCollider : MonoBehaviour
 {
 
 [Header("Player ID")]
-public int thisPlayaerID;
+public int thisPlayerID;
+public string canHurtTag;
 
     [Header("Damage / Cooldown")]
     public float hitCooldown = 1f;
@@ -67,6 +68,12 @@ public int thisPlayaerID;
         if (Time.time - lastHitTime < hitCooldown) return;
 
         // Does the other collider carry an HP modifier?
+
+       if(hit.gameObject.CompareTag(canHurtTag)){
+
+        
+Debug.Log("Im getting hit by Other player");
+
         var hpMod = hit.collider.GetComponent<colliderHpModify>();
         if (hpMod == null) return;
 
@@ -75,7 +82,7 @@ public int thisPlayaerID;
         // Apply delta (damage or heal) - assuming hpChange is signed (- = damage, + = heal)
         if (hpMod.hpChange < 0)
         {
-            GameManager.Instance?.RemoveHP(-hpMod.hpChange, thisPlayaerID);
+            GameManager.Instance?.RemoveHP(-hpMod.hpChange, thisPlayerID);
             if (HpLoseSound) audioS.PlayOneShot(HpLoseSound);
         }
         else
@@ -95,6 +102,8 @@ public int thisPlayaerID;
             fromOther = -Vector3.ProjectOnPlane(hit.moveDirection, Vector3.up).normalized; // fallback
 
         ApplyKnockback(fromOther, knockStrength, knockDuration);
+
+        }
     }
 
     // Public so other scripts (e.g., explosions) can reuse it
