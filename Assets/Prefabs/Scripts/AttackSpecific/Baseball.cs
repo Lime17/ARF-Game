@@ -10,6 +10,9 @@ public class Baseball : MonoBehaviour
     public float damageIncreasePerBounce = 5f; // How much extra damage per hit
     private hitPlayer hitScript;               // reference to existing damage script
 
+    [HideInInspector] public InstantiateBaseball ownerSpawner;
+
+
     void Start()
     {
         timer = baseballTimer;
@@ -47,6 +50,15 @@ public class Baseball : MonoBehaviour
             {
                 hitScript.damage += damageIncreasePerBounce;
             }
+        }
+    }
+
+     void OnDestroy()
+    {
+        // Tell the spawner that this baseball is gone
+        if (ownerSpawner != null)
+        {
+            ownerSpawner.ClearBallReference(this);
         }
     }
 }

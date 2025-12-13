@@ -19,6 +19,23 @@ public class hitPlayer : MonoBehaviour
 
     private bool canHit = true;
 
+    public int attackerPlayerID = -1;
+
+        void Awake()
+        {
+            // Look up the hierarchy for an owner
+            AttackOwnership owner = GetComponentInParent<AttackOwnership>();
+
+            if (owner != null)
+            {
+                attackerPlayerID = owner.playerID;
+            }
+            else
+            {
+                Debug.LogWarning($"{name} has no AttackOwner in parent hierarchy");
+            }
+        }
+
     private void OnTriggerEnter(Collider collider)
     {
 
@@ -35,7 +52,7 @@ public class hitPlayer : MonoBehaviour
                 if (hpCollider != null)
         {
 
-                GameManager.Instance.RemoveHP(damage, hpCollider.thisPlayerID);// add player number in 2 player game
+                GameManager.Instance.RemoveHP(damage, hpCollider.thisPlayerID, attackerPlayerID);// add player number in 2 player game
         }
 
                 var PlayerKnockback = collider.GetComponent<PlayerKnockback>();

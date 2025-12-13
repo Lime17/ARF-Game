@@ -2,8 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users; // handles pairing/unpairing devices
 using UnityEngine.Events;            // Optional: UnityEvent to hook UI responses
-using System.Collections.Generic;    // used for array-like lists so that line 15 doesn't need to be repeated throughout the script
-
+using System.Collections.Generic;    // used for array-like lists
 public class PlayerInputAssign : MonoBehaviour
 {
     public PlayerInput player1Input;

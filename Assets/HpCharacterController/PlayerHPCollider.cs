@@ -80,17 +80,16 @@ Debug.Log("Im getting hit by Other player");
         lastHitTime = Time.time;
 
         // Apply delta (damage or heal) - assuming hpChange is signed (- = damage, + = heal)
-        if (hpMod.hpChange < 0)
-        {
-            GameManager.Instance?.RemoveHP(-hpMod.hpChange, thisPlayerID);
-            if (HpLoseSound) audioS.PlayOneShot(HpLoseSound);
-        }
-        else
-        {
-            GameManager.Instance?.AddHP(hpMod.hpChange);
-            if (HpGainSound) audioS.PlayOneShot(HpGainSound);
-        }
+       if (hpMod.hpChange < 0)
+{
+    // 🔹 GET THE ATTACK OWNER
+    hitPlayer hitScript = hit.collider.GetComponent<hitPlayer>();
+    if (hitScript == null) return;
 
+    GameManager.Instance.RemoveHP(-hpMod.hpChange, thisPlayerID, hitScript.attackerPlayerID);
+
+    if (HpLoseSound) audioS.PlayOneShot(HpLoseSound);
+}
 
         // ---- KNOCKBACK ----
         // Direction away from the object we hit, horizontal

@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056c519aad89dba44bdde1d1f144694b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 0
   objectDamage: 20
   force: 15
   cooldown: 1
@@ -168,7 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseballTimer: 3
-  damageIncreasePerBounce: 10
+  damageIncreasePerBounce: 15
+  ownerSpawner: {fileID: 0}
 --- !u!135 &4438377607166613878
 SphereCollider:
   m_ObjectHideFlags: 0

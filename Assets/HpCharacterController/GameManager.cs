@@ -38,9 +38,10 @@ public class GameManager : MonoBehaviour
     }
 
     //remove health from anywhere in the scene
-    public void RemoveHP(float hpToRemove, int playerID)
+    public void RemoveHP(float hpToRemove, int playerID, int attackerPlayerID)
     {
         if (hpToRemove == 0) return;
+        if (playerID == attackerPlayerID) return; // if you spawned the attack, don't damage yourself
         if(playerID == 1){ 
        playerHP -= hpToRemove;
         } else if (playerID == 2)
