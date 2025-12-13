@@ -44,6 +44,26 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2042776171743092499, guid: a72af01f154011849a7b197ae56c064d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250416281988165910, guid: a72af01f154011849a7b197ae56c064d, type: 3}
+      propertyPath: m_Height
+      value: 3.849914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250416281988165910, guid: a72af01f154011849a7b197ae56c064d, type: 3}
+      propertyPath: m_Radius
+      value: 0.48063773
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250416281988165910, guid: a72af01f154011849a7b197ae56c064d, type: 3}
+      propertyPath: m_Center.y
+      value: -0.9249531
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250416281988165910, guid: a72af01f154011849a7b197ae56c064d, type: 3}
+      propertyPath: m_Center.z
+      value: 0.019362284
+      objectReference: {fileID: 0}
     - target: {fileID: 7567062709797809530, guid: a72af01f154011849a7b197ae56c064d, type: 3}
       propertyPath: force
       value: 35
@@ -119,14 +139,14 @@ PrefabInstance:
       addedObject: {fileID: 7489582062453304373}
     - targetCorrespondingSourceObject: {fileID: 1083435058353504278, guid: a72af01f154011849a7b197ae56c064d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 960335625946558065}
+      addedObject: {fileID: 1991723435785244543}
   m_SourcePrefab: {fileID: 100100000, guid: a72af01f154011849a7b197ae56c064d, type: 3}
 --- !u!1 &3955888110263392443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1083435058353504278, guid: a72af01f154011849a7b197ae56c064d, type: 3}
   m_PrefabInstance: {fileID: 4174556715618752685}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &960335625946558065
+--- !u!136 &1991723435785244543
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,10 +165,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000004
-  m_Height: 2.0000012
+  m_Radius: 0.48063773
+  m_Height: 3.849914
   m_Direction: 1
-  m_Center: {x: 0.00000047683716, y: 0.00000047683716, z: 0.00000059604645}
+  m_Center: {x: 0, y: -0.9249531, z: 0.019362284}
 --- !u!1 &4859943714448533351 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8835776837355683786, guid: a72af01f154011849a7b197ae56c064d, type: 3}
