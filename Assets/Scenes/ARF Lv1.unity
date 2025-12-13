@@ -2661,7 +2661,6 @@ MonoBehaviour:
   objectDamage: 0
   force: 10
   cooldown: 1
-  attackerPlayerID: -1
 --- !u!65 &259581176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12114,7 +12113,6 @@ GameObject:
   - component: {fileID: 1082027590}
   - component: {fileID: 1082027592}
   - component: {fileID: 1082027591}
-  - component: {fileID: 1082027593}
   m_Layer: 0
   m_Name: AttackSpawn2
   m_TagString: Untagged
@@ -12190,19 +12188,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082027589}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1082027593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082027589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4798ee5d16187ad46bf3fe7a3f2ba62e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: 2
 --- !u!4 &1082449001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6411727523590554368, guid: 5ce1c81773cea8445958a32979604944, type: 3}
@@ -13094,7 +13079,6 @@ GameObject:
   - component: {fileID: 1169352581}
   - component: {fileID: 1169352580}
   - component: {fileID: 1169352579}
-  - component: {fileID: 1169352582}
   m_Layer: 0
   m_Name: AttackSpawn
   m_TagString: Untagged
@@ -13163,26 +13147,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169352578}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.026, y: -0.681, z: -0.9270003}
   m_LocalScale: {x: 0.41, y: 0.41, z: 0.41}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 790320908}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1169352582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169352578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4798ee5d16187ad46bf3fe7a3f2ba62e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1171829099
 GameObject:
   m_ObjectHideFlags: 0
@@ -24000,6 +23971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToTurnOn: {fileID: 7972130462599849831, guid: ed614b8960fd0db479a53d3e9c182bce, type: 3}
   spawnPoint: {fileID: 1169352578}
+  attackerID: 1
 --- !u!114 &6171182001743227688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24445,6 +24417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToTurnOn: {fileID: 7972130462599849831, guid: ed614b8960fd0db479a53d3e9c182bce, type: 3}
   spawnPoint: {fileID: 1082027589}
+  attackerID: 2
 --- !u!114 &8177105716532768941
 MonoBehaviour:
   m_ObjectHideFlags: 0

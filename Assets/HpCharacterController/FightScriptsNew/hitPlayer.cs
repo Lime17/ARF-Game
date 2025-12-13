@@ -19,40 +19,24 @@ public class hitPlayer : MonoBehaviour
 
     private bool canHit = true;
 
-    public int attackerPlayerID = -1;
-
-        void Awake()
-        {
-            // Look up the hierarchy for an owner
-            AttackOwnership owner = GetComponentInParent<AttackOwnership>();
-
-            if (owner != null)
-            {
-                attackerPlayerID = owner.playerID;
-            }
-            else
-            {
-                Debug.LogWarning($"{name} has no AttackOwner in parent hierarchy");
-            }
-        }
-
     private void OnTriggerEnter(Collider collider)
     {
 
-        if (canHit)
-        {
-            if (collider.CompareTag("Player"))
+        if (canHit && collider.CompareTag("Player"))
             {
                 Debug.Log("I am touching the player");
 
-
                  // Get the player's HP controller to read the Player ID
                 var hpCollider = collider.GetComponent<PlayerHPCollider>();
-
                 if (hpCollider != null)
         {
+                    AttackOwnership owner = GetComponent<AttackOwnership>();
+                        if (owner != null && owner.playerID == hpCollider.thisPlayerID)
+                        {
+                            return; // ignore self-damage
+                        }
 
-                GameManager.Instance.RemoveHP(damage, hpCollider.thisPlayerID, attackerPlayerID);// add player number in 2 player game
+                GameManager.Instance.RemoveHP(damage, hpCollider.thisPlayerID);// add player number in 2 player game
         }
 
                 var PlayerKnockback = collider.GetComponent<PlayerKnockback>();
@@ -79,5 +63,3 @@ public class hitPlayer : MonoBehaviour
 
         }
     }
-
-}
